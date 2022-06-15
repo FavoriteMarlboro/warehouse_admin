@@ -6,4 +6,6 @@ public class SysUser {
    public String toString() {
       return super.toString();
    }
+
+   public String awh;
 }
