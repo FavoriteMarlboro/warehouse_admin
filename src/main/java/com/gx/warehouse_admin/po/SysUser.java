@@ -7,5 +7,4 @@ public class SysUser {
       return super.toString();
    }
 
-   public String awh;
 }
