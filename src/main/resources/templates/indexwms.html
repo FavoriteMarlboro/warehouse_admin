@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/components.css">
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/plugins.css">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/themes.css">
+    <title>wms仓库管理系统</title>
+    <link rel="stylesheet" href="/css/components.css">
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/plugins.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/themes.css">
 </head>
 
 
@@ -75,6 +75,23 @@
                         </div>
                         <div class='li'>
                             <a href="article_recycle.html" target="rightiframe"><i class="fa fa-fw fa-angle-right"></i><span>收货明细</span></a>
+                        </div>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><i class="fa fa-fw fa-file-word-o"></i> <span>质检管理</span></dt>
+                    <dd>
+                        <div class='li'>
+                            <a href="/qualityInspection/incomingMaterial" target="ppq"><i class="fa fa-fw fa-angle-right"></i><span>来料质检</span></a>
+                        </div>
+                        <div class='li'>
+                            <a href="" target="ppq"><i class="fa fa-fw fa-angle-right"></i><span>库内质检</span></a>
+                        </div>
+                        <div class='li'>
+                            <a href="article.html" target="rightiframe"><i class="fa fa-fw fa-angle-right"></i><span>成品检验</span></a>
+                        </div>
+                        <div class='li'>
+                            <a href="article.html" target="rightiframe"><i class="fa fa-fw fa-angle-right"></i><span>生产质检</span></a>
                         </div>
                     </dd>
                 </dl>
@@ -257,7 +274,7 @@
             </div>
         </div>
         <div class="right">
-            <iframe src="controlpanel.html" frameborder="0" id="rightiframe" name="rightiframe"></iframe>
+            <iframe src="" frameborder="0" id="rightiframe" name="ppq"></iframe>
         </div>
     </section>
     <div class="rightmask"></div>
