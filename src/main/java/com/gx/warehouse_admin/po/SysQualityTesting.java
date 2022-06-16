@@ -23,6 +23,9 @@ public class SysQualityTesting {
     //其他入库id
     private Integer otherProductId;
 
+    //单据编号
+    private String documentsNumber;
+
     //质检状态
     private Byte qualityTestingState;
 

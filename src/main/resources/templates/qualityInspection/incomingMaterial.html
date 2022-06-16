@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>来料检验</title>
+</head>
+<link rel="stylesheet" href="/css/xadmin.css" type="text/css">
+<link rel="stylesheet" href="/css/font.css" type="text/css">
+<link rel="stylesheet" href="/css/layui.css">
+<body>
+<div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md12">
+            <div class="layui-card">
+                <div class="layui-card-body ">
+                    <form class="layui-form layui-col-space5">
+                        <div class="layui-inline layui-show-xs-block">
+                            <label class="layui-form-label">职位名称</label>
+                            <div class="layui-input-inline layui-show-xs-block">
+                                <input type="text" id="searchName" placeholder="职位名称" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-inline layui-show-xs-block">
+                            <label class="layui-form-label">职位状态</label>
+                            <div class="layui-input-inline layui-show-xs-block">
+                                <select id="searchStatus">
+                                    <option value="">全部</option>
+                                    <option value="1">启用</option>
+                                    <option value="0">禁用</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-input-inline layui-show-xs-block">
+                            <button class="layui-btn" type="button" id="btnSearch">
+                                <i class="layui-icon layui-icon-search"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="layui-card-header">
+                    <button class="layui-btn" id="btnAdd">
+                        <i class="layui-icon layui-icon-addition"></i>添加
+                    </button>
+                    <button class="layui-btn layui-btn-normal" id="btnEdit">
+                        <i class="layui-icon layui-icon-edit"></i>修改
+                    </button>
+                    <button class="layui-btn layui-btn-danger" id="btnDelete">
+                        <i class="layui-icon layui-icon-delete"></i>删除
+                    </button>
+                </div>
+                <div class="layui-card-body ">
+                    <table class="layui-hide" id="tablePosition" lay-filter="tablePositionEvent"></table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<button id="btn">啊啊</button>
+<script src="/js/layui.js"></script>
+<script>
+    layui.use(function (){
+        //变量
+        var table=layui.table,
+            $=layui.$;
+        //菜单树形table初始化
+        var tablePosition = table.render({
+            elem:'#tablePosition',
+            id:'tablePosition',
+            url:'/qualityInspection/selectQualityTestingTable',
+            method: "post",
+            page:true, //开启分页
+            cols:[ [
+                // {field: "",title: "产品名称"},
+                // {field:'positionName',title:'产品编号',width:400},
+                // {field:'id',title:'生产日期',width: 120},
+                // {field:'positionSort',title:'数量',event:'sort',width:110,align:'center'},
+                // {
+                //     field: 'positionStatus',
+                //     title: '质检状态',
+                //     width: 80,
+                //     templet: function (rowData) {
+                //         if(rowData.positionStatus === 1){
+                //             return '<span class="layui-badge layui-bg-green">启用</span>';
+                //         }else {
+                //             return '<span class="layui-badge layui-bg-orange">禁用</span>';
+                //         }
+                //     }
+                // },
+                // {field: 'gmtCreate',title: '质检日期',event: 'gmtCreate',width: 180},
+                // {field: 'remark',title: '备注',event: 'remark'}
+            ] ],
+            limit:10, //每页的页数
+            limits:[5,10,15,20,25,30] //定义每页页数选择下拉框
+        });
+
+
+        $("#btn").click(function (){
+            $.post("/qualityInspection/selectQualityTestingTable",{},function (data){
+                console.log("122");
+            })
+        })
+    })
+</script>
+</body>
+</html>
