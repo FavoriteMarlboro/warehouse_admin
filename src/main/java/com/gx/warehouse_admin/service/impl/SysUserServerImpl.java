@@ -1,6 +1,6 @@
 package com.gx.warehouse_admin.service.impl;
 
-import com.gx.warehouse_admin.mapper.IUserMapper;
+import com.gx.warehouse_admin.mapper.UserMapper;
 import com.gx.warehouse_admin.po.SysUser;
 import com.gx.warehouse_admin.service.ISysUserServer;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,10 +10,10 @@ import org.springframework.stereotype.Service;
 public class SysUserServerImpl implements ISysUserServer {
 
 
-    private IUserMapper userMapper;
+    private UserMapper userMapper;
 
     @Autowired
-    public SysUserServerImpl(IUserMapper userMapper) {
+    public SysUserServerImpl(UserMapper userMapper) {
         this.userMapper = userMapper;
     }
 

@@ -1,7 +1,7 @@
 package com.gx.warehouse_admin.security;
 
 
-import com.gx.warehouse_admin.mapper.IUserMapper;
+import com.gx.warehouse_admin.mapper.UserMapper;
 import com.gx.warehouse_admin.vo.UserVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserDetailServiceImpl implements UserDetailsService {
     @Autowired
-    private  IUserMapper userMapper;
+    private UserMapper userMapper;
 
     //在这个方法上面获取用户信息及密码
     @Override

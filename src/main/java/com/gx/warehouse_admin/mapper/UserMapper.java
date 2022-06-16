@@ -10,7 +10,7 @@ import tk.mybatis.mapper.common.BaseMapper;
 import java.util.List;
 
 @Repository
-public interface IUserMapper extends BaseMapper<SysUser> {
+public interface UserMapper extends BaseMapper<SysUser> {
 
     @Select("select * from sys_user where user_name = #{userName}")
     UserVo selectByName(String userName);
