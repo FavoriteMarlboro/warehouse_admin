@@ -5,50 +5,122 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+import java.io.Serializable;
 import java.util.Date;
 
+/**
+ * @author 
+ * 用户表
+ */
 @Data
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
-public class SysUser {
+public class SysUser implements Serializable {
+    /**
+     * id
+     */
+    private Integer id;
 
-    //用户id
-    private Integer userId;
+    /**
+     * gmt_create
+     */
+    private Date gmtCreate;
 
-    //角色id
-    private Integer roleId;
+    /**
+     * gmt_modified
+     */
+    private Date gmtModified;
 
-    //部门id
-    private Integer departmentId;
+    /**
+     * is_deleted
+     */
+    private Byte isDeleted;
 
-    //用户名
+    /**
+     * 用户名
+     */
     private String userName;
 
-    //密码
+    /**
+     * 密码
+     */
     private String userPassword;
 
-    //密码盐
+    /**
+     * 密码盐值
+     */
     private String salt;
 
-    //员工工号
-    private String staffWork;
+    /**
+     * 所属部门id
+     */
+    private Integer departmentId;
 
-    //员工姓名
-    private String staffName;
+    /**
+     * 职位id
+     */
+    private Integer positionId;
 
-    //性别
+    /**
+     * 角色id
+     */
+    private Integer roleId;
+
+    /**
+     * 姓名
+     */
+    private String realName;
+
+    /**
+     * 性别
+     */
     private Byte gender;
 
-    //出生日期
-    private Date birthDate;
+    /**
+     * 出身日期
+     */
+    private Date birthday;
 
-    //电话
-    private String phone;
+    /**
+     * 头像
+     */
+    private String portrait;
 
-    //邮件
+    /**
+     * Email
+     */
     private String email;
 
-    //用户状态
-    private byte userStatus;
+    /**
+     * 手机号
+     */
+    private String mobile;
+
+    /**
+     * QQ
+     */
+    private String qq;
+
+    /**
+     * 微信
+     */
+    private String wechat;
+
+    /**
+     * 用户状态
+     */
+    private Byte userStatus;
+
+    /**
+     * 登录次数
+     */
+    private Integer loginCount;
+
+    /**
+     * 备注
+     */
+    private String remark;
+
+    private static final long serialVersionUID = 1L;
 }

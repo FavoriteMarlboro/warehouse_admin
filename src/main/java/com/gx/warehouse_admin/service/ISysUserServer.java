@@ -1,9 +1,9 @@
 package com.gx.warehouse_admin.service;
 
+import com.baomidou.mybatisplus.extension.service.IService;
 import com.gx.warehouse_admin.po.SysUser;
 
-public interface ISysUserServer {
+public interface ISysUserServer extends IService<SysUser>{
 
-    //登录 - 根据用户名查询
-    SysUser selectByName(String userName,SysUser users);
+
 }

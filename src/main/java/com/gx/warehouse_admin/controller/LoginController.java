@@ -12,10 +12,10 @@ import java.io.OutputStream;
 
 @Controller
 public class LoginController {
-
     @GetMapping("/login")
-    public String Login(){
-        return "Login";
+    public String login(){
+        System.out.println("输出");
+        return "login";
     }
 
     @GetMapping("/indexwms")
@@ -49,5 +49,6 @@ public class LoginController {
             System.out.println("输出流异常，验证码生成失败");
         }
     }
+
 
 }

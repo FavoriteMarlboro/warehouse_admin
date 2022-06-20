@@ -4,31 +4,36 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
-import tk.mybatis.mapper.annotation.KeySql;
 
-import javax.persistence.Id;
 import java.io.Serializable;
 import java.util.Date;
 
 /**
- * sys_menu
  * @author 
+ * 菜单表
  */
 @Data
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
 public class SysMenu implements Serializable {
-    @Id
-    @KeySql(useGeneratedKeys = true)
+    /**
+     * id
+     */
     private Integer id;
 
+    /**
+     * gmt_create
+     */
     private Date gmtCreate;
 
+    /**
+     * gmt_modified
+     */
     private Date gmtModified;
 
     /**
-     * 父菜单Id(0表示是根菜单)
+     * 父菜单id
      */
     private Integer parentId;
 
@@ -53,12 +58,12 @@ public class SysMenu implements Serializable {
     private Integer menuSort;
 
     /**
-     * 菜单类型(1目录 2页面 3按钮)
+     * 菜单类型
      */
     private Byte menuType;
 
     /**
-     * 菜单状态(0禁用 1启用)
+     * 菜单状态
      */
     private Byte menuStatus;
 
@@ -71,4 +76,6 @@ public class SysMenu implements Serializable {
      * 备注
      */
     private String remark;
+
+    private static final long serialVersionUID = 1L;
 }

@@ -1,9 +1,12 @@
 package com.gx.warehouse_admin.security;
 
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.gx.warehouse_admin.mapper.UserMapper;
+import com.gx.warehouse_admin.po.SysUser;
 import com.gx.warehouse_admin.vo.UserVo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -19,7 +22,32 @@ public class UserDetailServiceImpl implements UserDetailsService {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
         //查询用户信息
-        UserVo userVo = (UserVo) userMapper.selectByName(username);
+        QueryWrapper<SysUser> wrapper=new QueryWrapper<>();
+        wrapper.ge("user_name",username);
+        SysUser sysUser=this.userMapper.selectOne(wrapper);
+        UserVo userVo=new UserVo();
+        userVo.setId(sysUser.getId());
+        userVo.setGmtCreate(sysUser.getGmtCreate());
+        userVo.setGmtModified(sysUser.getGmtModified());
+        userVo.setIsDeleted(sysUser.getIsDeleted());
+        userVo.setUserName(sysUser.getUserName());
+        userVo.setUserPassword(sysUser.getUserPassword());
+        userVo.setSalt(sysUser.getSalt());
+        userVo.setDepartmentId(sysUser.getDepartmentId());
+        userVo.setPositionId(sysUser.getPositionId());
+        userVo.setRoleId(sysUser.getRoleId());
+        userVo.setRealName(sysUser.getRealName());
+        userVo.setGender(sysUser.getGender());
+        userVo.setBirthday(sysUser.getBirthday());
+        userVo.setPortrait(sysUser.getPortrait());
+        userVo.setEmail(sysUser.getEmail());
+        userVo.setMobile(sysUser.getMobile());
+        userVo.setQq(sysUser.getQq());
+        userVo.setWechat(sysUser.getWechat());
+        userVo.setUserStatus(sysUser.getUserStatus());
+        userVo.setLoginCount(sysUser.getLoginCount());
+        userVo.setRemark(sysUser.getRemark());
+
         if (userVo == null){
             userVo = new UserVo();
         }else {

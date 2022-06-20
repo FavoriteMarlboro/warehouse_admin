@@ -197,7 +197,7 @@
                     <dt><i class="fa fa-fw fa-user"></i> <span>仓库设置</span></dt>
                     <dd>
                         <div class='li'>
-                            <a href="administrators.html" target="rightiframe"><i class="fa fa-fw fa-angle-right"></i><span>仓库信息</span></a>
+                            <a href="/Repository/index" target="ppq"><i class="fa fa-fw fa-angle-right"></i><span id="warehouseMessage">仓库信息</span></a>
                         </div>
                         <div class='li'>
                             <a href="javascript:;"><i class="fa fa-fw fa-angle-right"></i><span>库位设置</span></a>
@@ -250,7 +250,7 @@
                             <a href="logs.html" target="rightiframe"><i class="fa fa-fw fa-angle-right"></i><span>仓库信息</span></a>
                         </div>
                         <div class='li'>
-                            <a href="logs.html" target="rightiframe"><i class="fa fa-fw fa-angle-right"></i><span>入库信息</span></a>
+                            <a href="Repository" target="rightiframe"><i class="fa fa-fw fa-angle-right"></i><span>入库信息</span></a>
                         </div>
                         <div class='li'>
                             <a href="logs.html" target="rightiframe"><i class="fa fa-fw fa-angle-right"></i><span>出库信息</span></a>
@@ -280,8 +280,8 @@
     <div class="rightmask"></div>
 </div>
 
-<script src="js/JQuery2.1.4.js"></script>
-<script src="js/layer.js"></script>
+<script src="/js/JQuery2.1.4.js"></script>
+<script src="/layer/layer.js"></script>
 <script>
     $('.navbar dl dt').click(function () {
         if (!$(this).siblings('dd').hasClass('active')) {
@@ -313,6 +313,11 @@
     },function(){
         $('.rightmask').removeClass('show');
     })
+
+    // //点击跳转到仓库管理页面
+    // $("#warehouseMessage").click(function (){
+    //     window.location="/Repository/index";
+    // })
 </script>
 </body>
 
